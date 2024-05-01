@@ -8,8 +8,69 @@ body{
     margin-top: 30px;
 }
 
+.reg_title{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    
+}
+.hello {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vh;
+    font-weight: bold;
+    
+}
+.btn_reg {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+
+
+}
+
+input, textarea, button{
+    margin-bottom: 20px;
+}
 .col-12 {
     margin-bottom: 30px;
+
+}
+
+.index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vh;
+    font-weight: bold;
+
+  
+}
+.links{
+    display: flex;
+    justify-content: center;
+}
+.links a
+{
+margin-right: 5px;
+margin-left: 5px;
+font-weight: bold;
+
+
 }
 
 .about {
@@ -81,8 +142,18 @@ body{
     align-items: center;
     justify-content: right;
 }
-
-.title_text{
+.button_js{
     text-align: center;
-    margin-top: 30px;
+
+}
+
+#myButton {
+    border: none;
+    border-radius: 15px;
+    width: 150px;
+    height: 50px;
+    background-color: #ff0000;
+    color: #000000;
+    font-weight: bold;
+
 }
