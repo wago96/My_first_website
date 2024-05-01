@@ -68,9 +68,10 @@
                 </h1>
             </div>
             <div class = 'col-12 hello'>
-                <form method = "POST" class ="hello" action = "profile.php">
+                <form method = "POST" class ="hello" action = "profile.php" enctype="multipart/form-data" name="upload">
                     <input type="text" class="form" type="text"  name="title" placeholder="Заголовок вашего поста"></input>
                     <textarea name="text" cols="30" rows="10" placeholder="Введите текст вашего поста ..."></textarea>
+                    <input type="file" name="file" /><br>
                     <button type="submit" class="btn_red" id="myButton" name="submit">Сохранить пост!</button> 
                 </form>
            </div>
@@ -96,4 +97,20 @@ if (isset($_POST['submit'])) {
 
     if(!mysqli_query($link, $sql)) die("не удалось добавить пост");   
 }
+
+if(!empty($_FILES["file"]))
+    {
+        if (((@$_FILES["file"]["type"] == "image/gif") || (@$_FILES["file"]["type"] == "image/jpeg")
+        || (@$_FILES["file"]["type"] == "image/jpg") || (@$_FILES["file"]["type"] == "image/pjpeg")
+        || (@$_FILES["file"]["type"] == "image/x-png") || (@$_FILES["file"]["type"] == "image/png"))
+        && (@$_FILES["file"]["size"] < 102400))
+        {
+            move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $_FILES["file"]["name"]);
+            echo "Load in:  " . "upload/" . $_FILES["file"]["name"];
+        }
+        else
+        {
+            echo "upload failed!";
+        }
+    }
 ?>
